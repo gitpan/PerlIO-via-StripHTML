@@ -1,14 +1,14 @@
-package PerlIO::Via::StripHTML;
+package PerlIO::via::StripHTML;
 
 require 5.008;
 use strict;
 use warnings;
 use HTML::Parser 3.00;
 
-our $VERSION = 0.03;
+our $VERSION = 0.04;
 
 sub PUSHED {
-    my ($class, $mode, $fh) = @_;
+    my ($class, $mode) = @_;
     return -1 if $mode ne 'r';
     # The following variables are updated / accessed via the closures below
     my $buffer = ''; # internal buffer for this layer
@@ -56,12 +56,12 @@ __END__
 
 =head1 NAME
 
-PerlIO::Via::StripHTML - PerlIO layer to strip HTML tags from an input file
+PerlIO::via::StripHTML - PerlIO layer to strip HTML tags from an input file
 
 =head1 SYNOPSIS
 
-    use PerlIO::Via::StripHTML;
-    open my $file, '<:Via(PerlIO::Via::StripHTML)', 'foo.html'
+    use PerlIO::via::StripHTML;
+    open my $file, '<:via(StripHTML)', 'foo.html'
 	or die "Can't open foo.html: $!\n";
 
 =head1 DESCRIPTION
@@ -76,7 +76,7 @@ This is only a preliminary version.
 
 =head1 SEE ALSO
 
-PerlIO::Via
+PerlIO::via
 
 =head1 AUTHOR
 

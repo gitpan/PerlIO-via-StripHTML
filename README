@@ -1,4 +1,4 @@
-PerlIO::Via::StripHTML version 0.03
+PerlIO::via::StripHTML version 0.04
 ===================================
 
 This package implements a PerlIO layer, for reading files only. It

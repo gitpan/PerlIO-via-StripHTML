@@ -6,13 +6,13 @@ use warnings;
 use Test::More tests => 6;
 
 BEGIN {
-    use_ok('PerlIO::Via::StripHTML');
+    use_ok('PerlIO::via::StripHTML');
 }
 
 chdir 't' if -d 't';
 
 undef $/;
-open my $fh, '<:Via(PerlIO::Via::StripHTML)', '1.html'
+open my $fh, '<:via(StripHTML)', '1.html'
     or die "Can't open 1.html: $!\n";
 my $file = <$fh>;
 close $fh;

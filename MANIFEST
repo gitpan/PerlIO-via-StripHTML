@@ -1,5 +1,5 @@
 Makefile.PL
-lib/PerlIO/Via/StripHTML.pm
+lib/PerlIO/via/StripHTML.pm
 t/1.t
 t/1.html
 Changes
